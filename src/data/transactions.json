@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "type": "refund",
+    "amount": 900,
+    "description": "Booking cancellation refund - Toyota Camry",
+    "date": "2024-12-20",
+    "status": "completed"
+  },
+  {
+    "id": 2,
+    "type": "payment",
+    "amount": -1200,
+    "description": "Payment for Honda Civic booking",
+    "date": "2024-12-18",
+    "status": "completed"
+  },
+  {
+    "id": 3,
+    "type": "refund",
+    "amount": 1800,
+    "description": "Security deposit refund - Nissan X-Trail",
+    "date": "2024-12-15",
+    "status": "completed"
+  }
+]

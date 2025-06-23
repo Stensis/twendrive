@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "renterName": "Alice Johnson",
+    "carName": "Toyota Camry 2022",
+    "dates": "Dec 15-17, 2024",
+    "amount": 1200,
+    "status": "confirmed",
+    "renterRating": 0,
+    "renterVerified": true
+  },
+  {
+    "id": 2,
+    "renterName": "Bob Smith",
+    "carName": "Honda Civic 2021",
+    "dates": "Dec 12-14, 2024",
+    "amount": 1050,
+    "status": "completed",
+    "renterRating": 5,
+    "renterVerified": true
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "type": "earning",
+    "grossAmount": 400,
+    "commission": 60,
+    "netAmount": 340,
+    "carName": "Toyota Camry 2022",
+    "renterName": "Alice Johnson",
+    "date": "2024-01-15",
+    "status": "completed"
+  },
+  {
+    "id": 2,
+    "type": "withdrawal",
+    "amount": 1500,
+    "method": "M-Pesa",
+    "date": "2024-01-10",
+    "status": "completed"
+  },
+  {
+    "id": 3,
+    "type": "earning",
+    "grossAmount": 350,
+    "commission": 52,
+    "netAmount": 298,
+    "carName": "Honda Civic 2021",
+    "renterName": "Bob Smith",
+    "date": "2024-01-08",
+    "status": "completed"
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "name": "Toyota Camry 2022",
+    "image": "https://images.unsplash.com/photo-1487887235947-a955ef187fcc?w=400&h=300&fit=crop",
+    "status": "available",
+    "price": 400,
+    "bookings": 12,
+    "rating": 4.8,
+    "totalEarnings": 5400,
+    "location": "Nairobi CBD",
+    "description": "Comfortable sedan perfect for city trips",
+    "lastInspection": "2024-01-10",
+    "inspectionStatus": "passed",
+    "inspectionImages": [
+      "https://images.unsplash.com/photo-1487887235947-a955ef187fcc?w=300&h=200&fit=crop",
+      "https://images.unsplash.com/photo-1486496572940-2bb2341fdbdf?w=300&h=200&fit=crop"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Honda Civic 2021",
+    "image": "https://images.unsplash.com/photo-1452378174528-3090a4bba7b2?w=400&h=300&fit=crop",
+    "status": "rented",
+    "price": 350,
+    "bookings": 8,
+    "rating": 4.6,
+    "totalEarnings": 2800,
+    "location": "Westlands",
+    "description": "Reliable and fuel-efficient car",
+    "lastInspection": "2024-01-08",
+    "inspectionStatus": "passed",
+    "inspectionImages": [
+      "https://images.unsplash.com/photo-1452378174528-3090a4bba7b2?w=300&h=200&fit=crop"
+    ]
+  }
+]

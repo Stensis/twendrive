@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "name": "Alice Johnson",
+    "lastMessage": "Thank you for the great car!",
+    "time": "2 hours ago",
+    "unread": 0,
+    "role": "renter"
+  },
+  {
+    "id": 2,
+    "name": "Bob Smith",
+    "lastMessage": "Is the car available next week?",
+    "time": "1 day ago",
+    "unread": 2,
+    "role": "renter"
+  }
+]

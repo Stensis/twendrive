@@ -1,0 +1,24 @@
+[
+  {
+    "carId": 1,
+    "carName": "Toyota Camry 2022",
+    "grossEarnings": 6353,
+    "commission": 953,
+    "netEarnings": 5400,
+    "bookingsCount": 12,
+    "avgRating": 4.8,
+    "thisMonth": 1500,
+    "lastMonth": 1200
+  },
+  {
+    "carId": 2,
+    "carName": "Honda Civic 2021",
+    "grossEarnings": 3294,
+    "commission": 494,
+    "netEarnings": 2800,
+    "bookingsCount": 8,
+    "avgRating": 4.6,
+    "thisMonth": 900,
+    "lastMonth": 750
+  }
+]

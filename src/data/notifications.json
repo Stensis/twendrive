@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "type": "booking",
+    "title": "New Booking Received",
+    "message": "Your Toyota Camry has been booked by John Doe for 3 days. Payment of KSh 1,200 is held in escrow.",
+    "timestamp": "2024-01-15 10:30 AM",
+    "read": false,
+    "priority": "high",
+    "actionRequired": true
+  },
+  {
+    "id": 2,
+    "type": "payment",
+    "title": "Payment Released",
+    "message": "KSh 1,020 has been deposited to your account for the Honda CR-V rental.",
+    "timestamp": "2024-01-14 3:45 PM",
+    "read": false,
+    "priority": "medium"
+  },
+  {
+    "id": 3,
+    "type": "return",
+    "title": "Vehicle Return Reminder",
+    "message": "BMW X5 rental ends tomorrow at 5:00 PM. Please prepare for vehicle inspection.",
+    "timestamp": "2024-01-13 9:00 AM",
+    "read": true,
+    "priority": "medium"
+  }
+]
