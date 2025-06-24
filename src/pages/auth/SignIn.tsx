@@ -68,7 +68,6 @@ const SignIn = () => {
           <ArrowLeft className="mr-2 h-4 w-4" />
           Back to Home
         </Button>
-        
         <Card className="border-2 border-orange-200 shadow-lg">
           <CardHeader className="text-center">
             <div className="flex items-center justify-center space-x-2 mb-2">
