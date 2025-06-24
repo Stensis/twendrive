@@ -7,8 +7,8 @@ import { Label } from '@/components/ui/label';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Wallet, Building, X, ArrowDownLeft, ArrowUpRight, Clock } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
-import { WalletManagementProps } from '@/lib/types';
-import transactionData from '@/data/transactions.json';
+import { WalletManagementProps } from '@/lib/owner/types';
+import transactionData from '@/data/owner/transactions.json';
 
 const WalletManagement: React.FC<WalletManagementProps> = ({ balance, onClose }) => {
   const [withdrawAmount, setWithdrawAmount] = useState('');

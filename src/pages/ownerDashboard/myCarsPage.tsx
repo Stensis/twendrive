@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { MapPin, Star, Eye, Edit, Trash2, Plus } from 'lucide-react';
-import carData from '@/data/cars.json';
+import carData from '@/data/owner/cars.json';
 import { useNavigate } from 'react-router-dom';
 
 const MyCarsPage = () => {

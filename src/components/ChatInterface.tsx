@@ -5,7 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { MessageCircle, Send } from 'lucide-react';
-import { ChatConversation, ChatInterfaceProps } from '@/lib/types';
+import { ChatConversation, ChatInterfaceProps } from '@/lib/owner/types';
 
 const ChatInterface: React.FC<ChatInterfaceProps> = ({
   userRole,

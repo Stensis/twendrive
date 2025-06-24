@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Sarah Johnson",
+    "role": "Business Traveler",
+    "comment": "Amazing service! Found the perfect car for my business trip. The owner was very professional and the car was exactly as described.",
+    "rating": 5,
+    "image": "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=80&h=80&fit=crop&crop=face"
+  },
+  {
+    "name": "David Kimani",
+    "role": "Car Owner",
+    "comment": "Great platform for car owners! I've been earning consistently from my car rentals. The security measures give me peace of mind.",
+    "rating": 5,
+    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face"
+  },
+  {
+    "name": "Mary Wanjiku",
+    "role": "Weekend Renter",
+    "comment": "Perfect for weekend getaways! Easy booking process and great variety of cars. Customer support is excellent.",
+    "rating": 5,
+    "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=face"
+  }
+]

@@ -5,7 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Calendar } from '@/components/ui/calendar';
 import { Upload, Camera } from 'lucide-react';
-import { AddCarFormProps } from '@/lib/types';
+import { AddCarFormProps } from '@/lib/owner/types';
 
 const AddCarForm: React.FC<AddCarFormProps> = ({ selectedDates, setSelectedDates }) => (
   <div className="space-y-6 mt-6">

@@ -1,0 +1,19 @@
+[
+  {
+    "id": 1,
+    "name": "John Doe",
+    "lastMessage": "Sounds good! I'll be there.",
+    "time": "10:30 AM",
+    "unread": 0,
+    "role": "owner"
+  },
+  {
+    "id": 2,
+    "name": "Alice Smith",
+    "lastMessage": "Can I extend the booking?",
+    "time": "Yesterday",
+    "unread": 1,
+    "role": "owner"
+    
+  }
+]

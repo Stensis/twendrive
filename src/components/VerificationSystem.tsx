@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Shield, CheckCircle, AlertTriangle, Upload, Camera, FileText, User, Car, CreditCard } from 'lucide-react';
-import { VerificationSystemProps } from '@/lib/types';
+import { VerificationSystemProps } from '@/lib/owner/types';
 
 const VerificationSystem: React.FC<VerificationSystemProps> = ({ userType, onVerificationComplete }) => {
   const [verificationStatus, setVerificationStatus] = useState({

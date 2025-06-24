@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { Star, X } from 'lucide-react';
-import { RatingSystemProps } from '@/lib/types';
+import { RatingSystemProps } from '@/lib/owner/types';
 
 const RatingSystem: React.FC<RatingSystemProps> = ({ car, onClose }) => {
   const [rating, setRating] = useState(0);

@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Calendar as CalendarIcon, Car, Star } from 'lucide-react';
 import React from 'react';
-import { OverviewPageProps } from '@/lib/types';
+import { OverviewPageProps } from '@/lib/owner/types';
 import { useNavigate } from 'react-router-dom';
 
 const OverviewPage: React.FC<OverviewPageProps> = ({

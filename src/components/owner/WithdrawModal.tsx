@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Building } from 'lucide-react';
-import { WithdrawModalProps } from '@/lib/types';
+import { WithdrawModalProps } from '@/lib/owner/types';
 
 const WithdrawModal: React.FC<WithdrawModalProps> = ({
     show,

@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Camera, CheckCircle, AlertTriangle, X } from 'lucide-react';
-import { VehicleInspectionProps } from '@/lib/types';
+import { VehicleInspectionProps } from '@/lib/owner/types';
 
 const VehicleInspection: React.FC<VehicleInspectionProps> = ({ car, onClose }) => {
   const [inspectionPhotos, setInspectionPhotos] = useState<string[]>([]);

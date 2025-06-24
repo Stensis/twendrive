@@ -1,8 +1,8 @@
 import React from 'react';
 import ChatInterface from '@/components/ChatInterface';
-import rawChatConversations from '@/data/chatConversations.json';
-import rawChatMessages from '@/data/chatMessages.json';
-import { ChatConversation, ChatMessage, Role, Sender } from '@/lib/types';
+import rawChatConversations from '@/data/owner/chatConversations.json';
+import rawChatMessages from '@/data/owner/chatMessages.json';
+import { ChatConversation, ChatMessage, Role, Sender } from '@/lib/owner/types';
 
 // Format data
 const chatConversations: ChatConversation[] = rawChatConversations.map((c) => ({

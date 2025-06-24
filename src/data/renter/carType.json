@@ -1,0 +1,63 @@
+[
+  {
+    "id": 1,
+    "name": "Toyota Camry 2022",
+    "type": "Sedan",
+    "images": [
+      "https://images.unsplash.com/photo-1487887235947-a955ef187fcc?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1552519507-6958c132d338?w=400&h=300&fit=crop"
+    ],
+    "location": "Nairobi CBD",
+    "price": 400,
+    "rating": 4.8,
+    "reviewCount": 45,
+    "description": "Comfortable sedan perfect for city trips",
+    "availability": "Available",
+    "ownerVerified": true,
+    "lastInspection": "2024-12-15",
+    "features": ["Air Conditioning", "GPS", "Bluetooth", "Backup Camera"],
+    "fuelType": "Petrol",
+    "transmission": "Automatic",
+    "seats": 5
+  },
+  {
+    "id": 2,
+    "name": "Honda Civic 2021",
+    "type": "Sedan",
+    "images": [
+      "https://images.unsplash.com/photo-1452378174528-3090a4bba7b2?w=400&h=300&fit=crop"
+    ],
+    "location": "Westlands",
+    "price": 350,
+    "rating": 4.6,
+    "reviewCount": 32,
+    "description": "Reliable and fuel-efficient car",
+    "availability": "Available",
+    "ownerVerified": true,
+    "lastInspection": "2024-12-10",
+    "features": ["Air Conditioning", "GPS", "Bluetooth"],
+    "fuelType": "Petrol",
+    "transmission": "Manual",
+    "seats": 5
+  },
+  {
+    "id": 3,
+    "name": "Nissan X-Trail 2018",
+    "type": "SUV",
+    "images": [
+      "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=400&h=300&fit=crop"
+    ],
+    "location": "Kilimani",
+    "price": 500,
+    "rating": 4.5,
+    "reviewCount": 28,
+    "description": "Spacious SUV for family adventures",
+    "availability": "Available",
+    "ownerVerified": true,
+    "lastInspection": "2024-12-08",
+    "features": ["Air Conditioning", "GPS", "4WD", "Roof Rack"],
+    "fuelType": "Petrol",
+    "transmission": "Automatic",
+    "seats": 7
+  }
+]

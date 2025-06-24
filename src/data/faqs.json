@@ -1,0 +1,34 @@
+[
+  {
+    "question": "How do I rent a car on Twende Ride?",
+    "answer": "Simply browse available cars, select your preferred vehicle, choose your rental dates, and complete the booking process. You'll need to verify your identity and driving license before your first rental."
+  },
+  {
+    "question": "What documents do I need to rent a car?",
+    "answer": "You need a valid driving license, national ID or passport, and a credit/debit card for payment. For added security, we also recommend completing our KYC verification process."
+  },
+  {
+    "question": "How do I list my car for rental?",
+    "answer": "Sign up as a car owner, add your vehicle details with photos, set your pricing and availability, complete KYC verification, and start earning from your car rentals."
+  },
+  {
+    "question": "What happens if there's damage to the car?",
+    "answer": "All rentals are covered by our comprehensive insurance policy. Any damage should be reported immediately. We conduct pre and post-rental inspections to document the vehicle condition."
+  },
+  {
+    "question": "How are payments processed?",
+    "answer": "Payments are processed securely through our platform. Renters pay upfront, and car owners receive payment after successful completion of the rental period, minus our service fee."
+  },
+  {
+    "question": "What if I need to cancel my booking?",
+    "answer": "You can cancel bookings according to our cancellation policy. Cancellations made 24 hours before the rental start time are eligible for a full refund, minus processing fees."
+  },
+  {
+    "question": "Is there 24/7 customer support?",
+    "answer": "Yes, we provide 24/7 customer support through chat, phone, and email. Our team is always ready to assist with any issues or emergencies during your rental period."
+  },
+  {
+    "question": "How is the safety of vehicles ensured?",
+    "answer": "All vehicles undergo regular inspections, and owners must provide recent inspection reports. We also have a rating system where both renters and owners can rate each other for transparency."
+  }
+]

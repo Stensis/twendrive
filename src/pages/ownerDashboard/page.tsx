@@ -15,8 +15,8 @@ import {
   ChevronDown,
   CircleUser,
 } from 'lucide-react';
-import carData from '@/data/cars.json';
-import recentBookingsData from '@/data/recentBookings.json';
+import carData from '@/data/owner/cars.json';
+import recentBookingsData from '@/data/owner/recentBookings.json';
 import {
   Sidebar,
   SidebarContent,

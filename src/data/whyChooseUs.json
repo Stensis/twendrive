@@ -1,0 +1,26 @@
+[
+  {
+    "icon": "Shield",
+    "title": "Secure & Safe",
+    "description": "All users are KYC verified with comprehensive insurance coverage for peace of mind.",
+    "color": "text-green-500"
+  },
+  {
+    "icon": "Clock",
+    "title": "24/7 Availability",
+    "description": "Book cars anytime, anywhere with our round-the-clock customer support.",
+    "color": "text-blue-500"
+  },
+  {
+    "icon": "Award",
+    "title": "Quality Assured",
+    "description": "All vehicles undergo regular inspections to ensure top-notch quality and safety.",
+    "color": "text-purple-500"
+  },
+  {
+    "icon": "CreditCard",
+    "title": "Easy Payments",
+    "description": "Secure payment processing with multiple payment options for your convenience.",
+    "color": "text-orange-500"
+  }
+]

@@ -6,7 +6,7 @@ import { Badge } from '@/components/ui/badge';
 import { Bell, Mail, Phone, MessageSquare, CheckCircle, AlertTriangle, Car, CreditCard } from 'lucide-react';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import rawNotificationData from '@/data/notifications.json';
-import { Notification } from "../lib/types";
+import { Notification } from "../lib/owner/types";
 
 const notificationData: Notification[] = rawNotificationData.map((n) => ({
   ...n,

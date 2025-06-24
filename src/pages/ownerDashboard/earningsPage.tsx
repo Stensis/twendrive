@@ -12,8 +12,8 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
-import earningsBreakdownData from '@/data/earningsBreakdown.json';
-import transactionHistoryData from '@/data/transactionHistory.json';
+import earningsBreakdownData from '@/data/owner/earningsBreakdown.json';
+import transactionHistoryData from '@/data/owner/transactionHistory.json';
 import { BarChart3, Clock, DollarSign, Upload } from 'lucide-react';
 import WithdrawModal from '@/components/owner/WithdrawModal';
 

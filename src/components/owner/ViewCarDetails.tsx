@@ -7,7 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Calendar } from '@/components/ui/calendar';
 import { Camera, CheckCircle, Edit, Shield, Star } from 'lucide-react';
 import VehicleInspectionSection from './VehicleInspectionSection';
-import { ViewCarDetailsProps } from '@/lib/types';
+import { ViewCarDetailsProps } from '@/lib/owner/types';
 
 const ViewCarDetails: React.FC<ViewCarDetailsProps> = ({ car, recentBookings }) => {
 
