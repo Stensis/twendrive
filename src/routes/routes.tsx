@@ -15,6 +15,8 @@ import TestimonialsPage from "@/pages/landingPage/TestimonialsPage";
 import FeaturedCarsPage from "@/pages/landingPage/FeaturedCarsPage";
 import WhyChooseUsPage from "@/pages/landingPage/WhyChooseUsPage";
 import FAQPage from "@/pages/landingPage/FAQPage";
+import VerifyEmail from "@/pages/auth/VerifyEmail";
+import VerifyOtp from "@/pages/auth/VerifyOtp";
 
 const AppRoutes = () => {
     return (
@@ -22,7 +24,9 @@ const AppRoutes = () => {
             {/* Public Routes */}
             <Route path="/" element={<Index />} />
             <Route path="/signup" element={<SignUp />} />
-            <Route path="/signin" element={<SignIn />} />
+            <Route path="/login" element={<SignIn />} />
+            <Route path="/verify-email" element={<VerifyEmail />} />
+            <Route path="/verify-otp" element={<VerifyOtp />} />
             <Route path="/hero" element={<HeroPage />} />
             <Route path="/why-choose-us" element={<WhyChooseUsPage />} />
             <Route path="/why-choose-us" element={<WhyChooseUsPage />} />

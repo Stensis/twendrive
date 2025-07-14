@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-    Car,
     Facebook,
     Twitter,
     Instagram,
@@ -17,10 +16,10 @@ const Footer: React.FC = () => {
                     {/* Logo & Description */}
                     <div>
                         <div className="flex items-center space-x-2 mb-4">
-                            <div className="w-8 h-8 bg-gradient-to-r from-orange-500 to-red-500 rounded-lg flex items-center justify-center">
-                                <Car className="h-5 w-5 text-white" />
+                            <div className="w-14 h-14 rounded-lg flex items-center justify-center">
+                                <img src="/assets/logo.png" alt="twendrive-logo" className=" object-contain" />
                             </div>
-                            <span className="text-xl font-bold">Twende Ride</span>
+                            <span className="text-xl font-bold">TwenDrive</span>
                         </div>
                         <p className="text-gray-400 mb-4">
                             Kenya's premier peer-to-peer car rental platform connecting car owners with renters nationwide.
@@ -64,7 +63,7 @@ const Footer: React.FC = () => {
                             </div>
                             <div className="flex items-center space-x-2">
                                 <Mail className="h-4 w-4 text-orange-500" />
-                                <span className="text-gray-400">support@twenderide.com</span>
+                                <span className="text-gray-400">support@twendrive.com</span>
                             </div>
                             <div className="flex items-center space-x-2">
                                 <MapPin className="h-4 w-4 text-orange-500" />
@@ -77,7 +76,7 @@ const Footer: React.FC = () => {
                 {/* Bottom line */}
                 <div className="border-t border-gray-800 mt-8 pt-8 text-center">
                     <p className="text-gray-400">
-                        © {new Date().getFullYear()} Twende Ride. All rights reserved. | Made with ❤️ in Kenya
+                        © {new Date().getFullYear()} TwenDrive. All rights reserved. | Made with ❤️ in Kenya
                     </p>
                 </div>
 

@@ -1,5 +1,4 @@
 import { useNavigate } from 'react-router-dom';
-import { Car } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Navbar = () => {
@@ -10,11 +9,11 @@ const Navbar = () => {
             <div className="container mx-auto px-4 py-4">
                 <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-2">
-                        <div className="w-10 h-10 bg-gradient-to-r from-orange-500 to-red-500 rounded-lg flex items-center justify-center">
-                            <Car className="h-6 w-6 text-white" />
+                        <div className="w-14 h-14  rounded-lg flex items-center justify-center">
+                            <img src="/assets/logo.png" alt="twendrive-logo" className=" object-contain" />
                         </div>
                         <span className="text-2xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
-                            Twende Ride
+                            TwenDrive
                         </span>
                     </div>
                     <div className="hidden md:flex items-center space-x-8">
@@ -25,7 +24,7 @@ const Navbar = () => {
                         <a href="#contact" className="text-gray-600 hover:text-orange-600 transition-colors">Contact</a>
                     </div>
                     <div className="flex items-center space-x-3">
-                        <Button variant="outline" onClick={() => navigate('/signin')} className="border-orange-200 text-orange-600 hover:bg-orange-50">
+                        <Button variant="outline" onClick={() => navigate('/login')} className="border-orange-200 text-orange-600 hover:bg-orange-50">
                             Sign In
                         </Button>
                         <Button onClick={() => navigate('/signup')} className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600">
