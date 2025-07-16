@@ -9,6 +9,7 @@ import { Label } from '@/components/ui/label';
 import { Car, Users, ArrowLeft } from 'lucide-react';
 import { registerUser } from '@/services/auth';
 import { signUpSchema } from '@/validators/auth/signupValidator';
+import { Eye, EyeOff } from 'lucide-react';
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -29,6 +30,13 @@ const SignUp = () => {
     confirmPassword: ''
   });
 
+
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirm, setShowConfirm] = useState(false);
+
+  const togglePassword = () => setShowPassword((prev) => !prev);
+  const toggleConfirm = () => setShowConfirm((prev) => !prev);
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
       ...formData,
@@ -47,18 +55,19 @@ const SignUp = () => {
       const { confirmPassword, ...rest } = formData;
 
       const dataToSend = {
-        ...rest,
+        ...formData,
         role,
       };
 
       const response = await registerUser(dataToSend);
-
+      
       toast({
         title: "Registration Successful",
-        description: "Your account has been created successfully.",
+        description: response.message || "Your account has been created successfully.",
       });
 
-      navigate(role === 'car_owner' ? '/owner-dashboard' : '/renter-dashboard');
+      navigate('/login');
+      
     } catch (err: any) {
       if (err.name === 'ValidationError') {
         // ✅ Collect all error messages and show them
@@ -281,31 +290,46 @@ const SignUp = () => {
                 />
               </div>
 
-              <div>
+              <div className="relative">
                 <Label htmlFor="password">Password</Label>
                 <Input
                   id="password"
                   name="password"
-                  type="password"
+                  type={showPassword ? 'text' : 'password'}
                   value={formData.password}
                   onChange={handleInputChange}
                   required
-                  className="mt-1 border-orange-200 focus:border-orange-400"
+                  className="mt-1 pr-10 border-orange-200 focus:border-orange-400"
                 />
+                <button
+                  type="button"
+                  onClick={togglePassword}
+                  className="absolute right-3 top-9 text-orange-400 hover:text-orange-600"
+                >
+                  {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                </button>
               </div>
 
-              <div>
+              <div className="relative mt-4">
                 <Label htmlFor="confirmPassword">Confirm Password</Label>
                 <Input
                   id="confirmPassword"
                   name="confirmPassword"
-                  type="password"
+                  type={showConfirm ? 'text' : 'password'}
                   value={formData.confirmPassword}
                   onChange={handleInputChange}
                   required
-                  className="mt-1 border-orange-200 focus:border-orange-400"
+                  className="mt-1 pr-10 border-orange-200 focus:border-orange-400"
                 />
+                <button
+                  type="button"
+                  onClick={toggleConfirm}
+                  className="absolute right-3 top-9 text-orange-400 hover:text-orange-600"
+                >
+                  {showConfirm ? <EyeOff size={18} /> : <Eye size={18} />}
+                </button>
               </div>
+
 
               <Button
                 type="submit"

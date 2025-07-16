@@ -42,10 +42,16 @@ import VerificationPage from '@/pages/renterDashboard/verificationPage';
 import CarDetailsPage from '@/pages/renterDashboard/carDetailsPage';
 import PaymentPage from '@/pages/renterDashboard/paymentPage';
 import ProfilePage from '@/pages/renterDashboard/profilePage';
+import {  useToast } from '@/hooks/use-toast';
+import { useDispatch } from 'react-redux';
+import { logoutUser } from '@/services/auth';
+import { logout } from '@/redux/slices/authSlice';
 
 const RenterDashboard = () => {
   const navigate = useNavigate();
   const { section } = useParams();
+  const dispatch = useDispatch();
+  const { toast } = useToast();
   const [activeSection, setActiveSection] = useState(section || 'browse');
   const [selectedCar, setSelectedCar] = useState<CarType | null>(null);
   const [showPayment, setShowPayment] = useState(false);
@@ -202,6 +208,24 @@ const RenterDashboard = () => {
     }
   };
 
+  const handleLogout = async () => {
+    try {
+      await logoutUser(); // hit the backend to clear the refresh token cookie
+    } catch (err) {
+      console.error("Logout API error", err);
+    }
+
+    dispatch(logout()); // clear Redux state
+    localStorage.clear(); // clear any stored user data
+    navigate('/login'); // redirect to login
+
+    toast({
+      title: "Logged out",
+      description: "You have been logged out successfully.",
+    });
+  };
+
+
   // THE MAIN MENU
   return (
     <SidebarProvider>
@@ -287,10 +311,7 @@ const RenterDashboard = () => {
                     </DropdownMenuItem>
                     <DropdownMenuSeparator className="my-2 h-px bg-gray-200" />
                     <DropdownMenuItem
-                      onClick={() => {
-                        localStorage.clear();
-                        navigate('/');
-                      }}
+                      onClick={handleLogout}
                       className="flex items-center space-x-2 cursor-pointer text-red-600"
                     >
                       <LogOut className="h-4 w-4" />

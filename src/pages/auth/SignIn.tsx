@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { setCredentials } from '@/redux/slices/authSlice';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -10,6 +12,7 @@ import { useToast } from '@/hooks/use-toast';
 
 const SignIn = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [activeTab, setActiveTab] = useState<'car_renter' | 'car_owner'>('car_renter');
   const [formData, setFormData] = useState({
     email: '',
@@ -26,24 +29,33 @@ const SignIn = () => {
     });
   };
 
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
+
+    console.log("🚀 handleSubmit triggered with:");
+    console.log("  Email:", formData.email);
+    console.log("  Password:", formData.password);
+    console.log("  Role:", activeTab);
 
     try {
       const res = await loginUser({
         identifier: formData.email,
         password: formData.password,
-        role: activeTab,
+        role: activeTab, // must be either 'car_renter' or 'car_owner'
       });
 
+      console.log("✅ Response in handleSubmit:", res);
+
       if (res.status === 401 && res.data?.status === 'otp-required') {
+        console.log("⚠️ OTP required — navigating to /verify-otp");
+
         localStorage.setItem('tempLogin', JSON.stringify({
           email: formData.email,
           password: formData.password,
           role: activeTab,
         }));
+
         navigate('/verify-otp', {
           state: {
             userId: res.data.data.userId,
@@ -52,10 +64,12 @@ const SignIn = () => {
         });
       } else if (res.data?.data?.accessToken) {
         const { accessToken, user } = res.data.data;
-        localStorage.setItem('accessToken', accessToken);
-        localStorage.setItem('userName', user.name);
-        localStorage.setItem('userEmail', user.email);
-        localStorage.setItem('userRole', user.role);
+
+        console.log("🔐 Logged in successfully with token:", accessToken);
+        console.log("🙍‍♀️ User:", user);
+
+        // ✅ Dispatch Redux credentials
+        dispatch(setCredentials({ user, token: accessToken }));
 
         toast({
           title: "Login Successful",
@@ -65,14 +79,19 @@ const SignIn = () => {
         navigate(user.role === 'car_owner' ? '/owner-dashboard' : '/renter-dashboard');
       }
     } catch (err: any) {
+      console.error("❌ Login error:", err);
+
       const errorData = err.response?.data;
 
       if (err.response?.status === 401 && errorData?.status === 'otp-required') {
+        console.warn("⚠️ OTP required from catch block");
+
         localStorage.setItem('tempLogin', JSON.stringify({
           email: formData.email,
           password: formData.password,
           role: activeTab,
         }));
+
         navigate('/verify-otp', {
           state: {
             userId: errorData.data.userId,
@@ -90,7 +109,6 @@ const SignIn = () => {
       setLoading(false);
     }
   };
-
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-red-50 flex items-center justify-center px-4">
@@ -190,9 +208,8 @@ const SignIn = () => {
               </Button>
 
             </form>
-
-            <div className="mt-4 text-center">
-              <p className="text-sm text-gray-600 mb-2">
+            <div className="mt-4 text-center space-y-2">
+              <p className="text-sm text-gray-600">
                 Don't have an account?{' '}
                 <button
                   onClick={() => navigate('/signup')}
@@ -201,7 +218,16 @@ const SignIn = () => {
                   Sign up
                 </button>
               </p>
+              <p className="text-sm">
+                <button
+                  onClick={() => navigate('/request-reset')}
+                  className="text-orange-600 hover:text-orange-700 underline font-medium"
+                >
+                  Forgot Password?
+                </button>
+              </p>
             </div>
+
           </CardContent>
 
         </Card>

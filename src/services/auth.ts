@@ -1,6 +1,4 @@
-import axios from "axios";
-
-const API_URL = "http://localhost:5000/api/auth";
+import axios from "@/services/axiosInstance";
 
 export const registerUser = async (data: {
   firstName: string;
@@ -11,7 +9,8 @@ export const registerUser = async (data: {
   password: string;
   role: "car_owner" | "car_renter";
 }) => {
-  const response = await axios.post(`${API_URL}/register`, data);
+  const response = await axios.post("/auth/register", data);
+
   return response.data;
 };
 
@@ -20,29 +19,54 @@ export const loginUser = async (data: {
   password: string;
   role: "car_owner" | "car_renter";
 }) => {
-  const response = await axios.post(`${API_URL}/login`, data);
+  console.log("📤 Sending login request with data:", data); // ✅ Log the request payload
+
+  const response = await axios.post(`/auth/login`, data);
+
+  console.log("📥 Received login response:", response); // ✅ Log the full response
+
   return response;
 };
 
 export const verifyEmailToken = async (token: string) => {
-  const response = await axios.get(`${API_URL}/verify-email`, {
+  const response = await axios.get(`/auth/verify-email`, {
     params: { token },
   });
   return response.data;
 };
 
 export const resendVerificationEmail = async (email: string) => {
-  const response = await axios.post(`${API_URL}/resend-email-verification`, {
+  const response = await axios.post(`/auth/resend-email-verification`, {
     email,
   });
   return response.data;
 };
 
-
-export const verifyOtp = async (data: {
-  userId: number;
-  otp: string;
-}) => {
-  const response = await axios.post(`${API_URL}/verify-otp`, data);
+export const verifyOtp = async (data: { userId: number; otp: string }) => {
+  const response = await axios.post(`/auth/verify-otp`, data);
   return response.data;
+};
+
+export const requestPasswordReset = async (email: string) => {
+  console.log("📤 Sending password reset request for email:", email);
+  const response = await axios.post("/password/request-reset", { email });
+  console.log("📥 Received response from server:", response.data);
+  return response.data;
+};
+
+export const resetPassword = async (
+  token: string,
+  password: string,
+  confirmPassword: string
+) => {
+  const response = await axios.post("/password/reset-password", {
+    token,
+    password,
+    confirmPassword,
+  });
+  return response.data;
+};
+
+export const logoutUser = async () => {
+  return await axios.post("/auth/logout"); // Ensure this route exists in backend
 };

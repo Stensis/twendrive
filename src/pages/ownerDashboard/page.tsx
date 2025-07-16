@@ -39,11 +39,16 @@ import AddCarPage from './AddCarPage';
 import ViewCarDetails from '@/components/owner/ViewCarDetails';
 import EditCarPage from '@/pages/ownerDashboard/editCarPage';
 import SettingsPage from './SettingsPage';
+import { logoutUser } from '@/services/auth';
+import { useDispatch } from "react-redux";
+import { useToast } from "@/hooks/use-toast"; // if you're using toast system
+import { logout } from '@/redux/slices/authSlice';
 
 const OwnerDashboard = () => {
   // const { section, } = useParams();
   const { section, '*': rest } = useParams(); // rest will be like "1" in "view-car-details/1"
-
+  const dispatch = useDispatch();
+  const { toast } = useToast()
   const navigate = useNavigate();
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   // const [selectedCar, setSelectedCar] = useState(null);
@@ -87,9 +92,21 @@ const OwnerDashboard = () => {
   const cars = carData
   const recentBookings = recentBookingsData;
 
-  const handleLogout = () => {
-    localStorage.clear();
-    navigate('/');
+  const handleLogout = async () => {
+    try {
+      await logoutUser(); // hit the backend to clear the refresh token cookie
+    } catch (err) {
+      console.error("Logout API error", err);
+    }
+
+    dispatch(logout()); // clear Redux state
+    localStorage.clear(); // clear any stored user data
+    navigate('/login'); // redirect to login
+
+    toast({
+      title: "Logged out",
+      description: "You have been logged out successfully.",
+    });
   };
 
 
