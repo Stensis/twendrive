@@ -1,6 +1,16 @@
 export type Role = "renter" | "owner";
 export type Sender = "user" | "other";
 
+export interface UpdateUserProfileDTO {
+  firstName: string;
+  lastName: string;
+  userName: string;
+  email: string;
+  phone: string;
+  location: string;
+  avatar?: string;
+}
+
 export interface Notification {
   id: number;
   type: "booking" | "payment" | "return" | "message" | "alert";

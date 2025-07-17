@@ -1,7 +1,6 @@
-// services/axiosInstance.ts
 import axios from "axios";
 import { store } from "@/redux/store";
-console.log("API:", import.meta.env.VITE_API_URL); // should show full URL
+import type { RootState } from "@/redux/store";
 
 const axiosInstance = axios.create({
   baseURL: import.meta.env.VITE_API_URL,
@@ -13,7 +12,8 @@ const axiosInstance = axios.create({
 
 axiosInstance.interceptors.request.use(
   (config) => {
-    const token = store.getState().auth.token;
+    const state = store.getState() as RootState;
+    const token = state.auth.token;
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
     }
@@ -22,5 +22,4 @@ axiosInstance.interceptors.request.use(
   (error) => Promise.reject(error)
 );
 
-// ✅ This is the instance you should use everywhere
 export default axiosInstance;

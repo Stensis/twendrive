@@ -12,6 +12,7 @@ import {
   REGISTER,
 } from "redux-persist";
 import storage from "redux-persist/lib/storage"; // LocalStorage
+import ownerCarsSlice from "./slices/owner/ownerCarsSlice";
 
 const persistConfig = {
   key: "auth",
@@ -24,6 +25,7 @@ const persistedAuthReducer = persistReducer(persistConfig, authReducer);
 export const store = configureStore({
   reducer: {
     auth: persistedAuthReducer,
+    ownerCars: ownerCarsSlice,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
@@ -35,3 +37,4 @@ export const store = configureStore({
 
 export type RootState = ReturnType<typeof store.getState>;
 export const persistor = persistStore(store);
+export type AppDispatch = typeof store.dispatch; 

@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import {
   Car,
@@ -43,9 +43,12 @@ import { logoutUser } from '@/services/auth';
 import { useDispatch } from "react-redux";
 import { useToast } from "@/hooks/use-toast"; // if you're using toast system
 import { logout } from '@/redux/slices/authSlice';
+import { useAuth } from '@/hooks/useAuth';
 
 const OwnerDashboard = () => {
   // const { section, } = useParams();
+  const { user } = useAuth();
+
   const { section, '*': rest } = useParams(); // rest will be like "1" in "view-car-details/1"
   const dispatch = useDispatch();
   const { toast } = useToast()
@@ -58,8 +61,6 @@ const OwnerDashboard = () => {
   const carId = section === 'view-car-details' && rest ? rest.split('/')[0] : null;
   const selectedCar = carId ? carData.find((car) => String(car.id) === carId) : null;
 
-  const userName = localStorage.getItem('userName') || 'John Doe';
-  const userEmail = localStorage.getItem('userEmail') || 'owner@test.com';
 
   const menuItems = [
     { id: "overview", label: "Overview", icon: BarChart3 },
@@ -135,7 +136,7 @@ const OwnerDashboard = () => {
       case 'earnings':
         return <EarningsPage />;
       case 'profile':
-        return <ProfilePage userName={userName} userEmail={userEmail} />;
+        return <ProfilePage />;
       case 'settings':
         return <SettingsPage />
 
@@ -251,7 +252,7 @@ const OwnerDashboard = () => {
               {/* Left: App Title */}
               <div className="flex flex-col md:flex-row items-start md:items-center space-y-1 md:space-y-0 md:space-x-3">
                 <h1 className="text-xl font-bold text-gray-700">
-                  Welcome back, <span className="text-orange-600">{userName}</span>
+                  Welcome back, <span className="text-orange-600">{user.firstName}</span>
                 </h1>
                 <span className="text-sm text-orange-500">(Car Owner)</span>
               </div>
@@ -268,11 +269,26 @@ const OwnerDashboard = () => {
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
                     <button className="flex items-center space-x-2 focus:outline-none">
-                      <Avatar>
+                      <Avatar className="w-10 h-10">
+                        {user.avatar ? (
+                          <img
+                            src={user.avatar}
+                            alt="User avatar"
+                            className="rounded-full object-cover w-full h-full"
+                          />
+                        ) : null}
                         <AvatarFallback className="bg-gradient-to-r from-orange-500 to-red-500 text-white">
-                          {userName.split(" ").map(n => n[0]).join("")}
+                          {typeof user.userName === 'string' && user.userName.trim() !== ''
+                            ? user.userName
+                              .trim()
+                              .split(/\s+/)
+                              .map((n) => n[0])
+                              .join('')
+                              .toUpperCase()
+                            : 'U'}
                         </AvatarFallback>
                       </Avatar>
+
                     </button>
                     {/* <p>{userEmail}</p> */}
                   </DropdownMenuTrigger>
@@ -282,9 +298,11 @@ const OwnerDashboard = () => {
                   >
 
                     {/* Profile + Settings */}
-                    <DropdownMenuItem className="flex items-center space-x-2 cursor-pointer">
-                      <User className="h-4 w-4" />
-                      <span>Profile</span>
+                    <DropdownMenuItem asChild>
+                      <Link to="/owner-dashboard/profile" className="flex items-center space-x-2">
+                        <User className="h-4 w-4" />
+                        <span>Profile</span>
+                      </Link>
                     </DropdownMenuItem>
                     <DropdownMenuSeparator className="my-2 h-px bg-gray-200" />
 
@@ -306,6 +324,11 @@ const OwnerDashboard = () => {
                   </DropdownMenuContent>
 
                 </DropdownMenu>
+
+                <h6>
+                  {user.userName}
+                </h6>
+
               </div>
             </div>
           </div>
